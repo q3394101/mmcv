@@ -1,7 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 from .base import BaseTransform
 from .builder import TRANSFORMS
-from .loading import LoadAnnotations, LoadImageFromFile
+from .loading import LoadAnnotations, LoadImageFromFile, LoadNpyFromFile
 from .processing import (CenterCrop, MultiScaleFlipAug, Normalize, Pad,
                          RandomChoiceResize, RandomFlip, RandomGrayscale,
                          RandomResize, Resize, TestTimeAug)
@@ -13,18 +13,19 @@ try:
 except ImportError:
     __all__ = [
         'BaseTransform', 'TRANSFORMS', 'TransformBroadcaster', 'Compose',
-        'RandomChoice', 'KeyMapper', 'LoadImageFromFile', 'LoadAnnotations',
-        'Normalize', 'Resize', 'Pad', 'RandomFlip', 'RandomChoiceResize',
-        'CenterCrop', 'RandomGrayscale', 'MultiScaleFlipAug', 'RandomResize',
-        'RandomApply', 'TestTimeAug'
+        'RandomChoice', 'KeyMapper', 'LoadImageFromFile', 'LoadNpyFromFile',
+        'LoadAnnotations', 'Normalize', 'Resize', 'Pad', 'RandomFlip',
+        'RandomChoiceResize', 'CenterCrop', 'RandomGrayscale',
+        'MultiScaleFlipAug', 'RandomResize', 'RandomApply', 'TestTimeAug'
     ]
 else:
     from .formatting import ImageToTensor, ToTensor, to_tensor
 
     __all__ = [
         'BaseTransform', 'TRANSFORMS', 'TransformBroadcaster', 'Compose',
-        'RandomChoice', 'KeyMapper', 'LoadImageFromFile', 'LoadAnnotations',
-        'Normalize', 'Resize', 'Pad', 'ToTensor', 'to_tensor', 'ImageToTensor',
-        'RandomFlip', 'RandomChoiceResize', 'CenterCrop', 'RandomGrayscale',
-        'MultiScaleFlipAug', 'RandomResize', 'RandomApply', 'TestTimeAug'
+        'RandomChoice', 'KeyMapper', 'LoadImageFromFile', 'LoadNpyFromFile',
+        'LoadAnnotations', 'Normalize', 'Resize', 'Pad', 'ToTensor',
+        'to_tensor', 'ImageToTensor', 'RandomFlip', 'RandomChoiceResize',
+        'CenterCrop', 'RandomGrayscale', 'MultiScaleFlipAug', 'RandomResize',
+        'RandomApply', 'TestTimeAug'
     ]
